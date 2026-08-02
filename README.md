@@ -5,3 +5,6 @@ Documented the recommended toolchain for developing on Base (Hardhat or Foundry 
 feat: add basic ERC20 token skeleton
 
 Started a minimal MyToken.sol based on OpenZeppelin standards. Preparing for testing token deployment on Base.
+feat: add burn function to MyToken
+
+Implemented a burn function so token holders can destroy their tokens. Completes basic ERC20 functionality for Base deployments.
