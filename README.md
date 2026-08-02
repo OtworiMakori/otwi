@@ -8,3 +8,6 @@ Started a minimal MyToken.sol based on OpenZeppelin standards. Preparing for tes
 feat: add burn function to MyToken
 
 Implemented a burn function so token holders can destroy their tokens. Completes basic ERC20 functionality for Base deployments.
+feat: add totalSupply tracking to MyToken
+
+Implemented proper totalSupply updates on mint and burn. Brings the token closer to standard ERC20 behavior on Base.
