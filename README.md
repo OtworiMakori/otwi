@@ -29,3 +29,41 @@ Added an optional transfer fee that can be enabled by the owner. Explores common
 feat: add max wallet limit to MyToken
 
 Implemented a maximum balance per wallet to prevent concentration. Common anti-whale feature tested on Base.
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+
+contract MyToken is ERC20, Ownable {
+    uint256 public transferFee = 0; // in basis points (100 = 1%)
+    uint256 public maxWallet;
+    mapping(address => bool) public blacklisted;
+
+    constructor(uint256 _maxWallet) ERC20("MyToken", "MTK") Ownable(msg.sender) {
+        maxWallet = _maxWallet;
+        _mint(msg.sender, 1_000_000 * 10 ** decimals());
+    }
+
+    function setTransferFee(uint256 fee) external onlyOwner {
+        require(fee <= 1000, "Max 10%");
+        transferFee = fee;
+    }
+
+    function setBlacklist(address account, bool status) external onlyOwner {
+        blacklisted[account] = status;
+    }
+
+    function _update(address from, address to, uint256 value) internal override {
+        require(!blacklisted[from] && !blacklisted[to], "Blacklisted");
+        if (from != address(0) && to != address(0)) {
+            require(balanceOf(to) + value <= maxWallet, "Max wallet exceeded");
+            uint256 fee = (value * transferFee) / 10000;
+            if (fee > 0) {
+                super._update(from, owner(), fee);
+                value -= fee;
+            }
+        }
+        super._update(from, to, value);
+    }
+}
