@@ -26,3 +26,6 @@ Implemented basic balance snapshots so holders can prove balances at specific mo
 feat: implement transfer with fee in MyToken
 
 Added an optional transfer fee that can be enabled by the owner. Explores common token mechanics on Base.
+feat: add max wallet limit to MyToken
+
+Implemented a maximum balance per wallet to prevent concentration. Common anti-whale feature tested on Base.
