@@ -97,3 +97,16 @@ contract SimpleVoting {
         noVotes++;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract EventCounter {
+    uint256 public count;
+
+    event Incremented(uint256 newCount);
+
+    function increment() external {
+        count++;
+        emit Incremented(count);
+    }
+}
