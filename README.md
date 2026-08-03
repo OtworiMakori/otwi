@@ -67,3 +67,18 @@ contract MyToken is ERC20, Ownable {
         super._update(from, to, value);
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract SimpleToken {
+    string public name = "SimpleToken";
+    string public symbol = "STK";
+    uint8 public decimals = 18;
+    uint256 public totalSupply;
+    mapping(address => uint256) public balanceOf;
+
+    function mint(address to, uint256 amount) external {
+        totalSupply += amount;
+        balanceOf[to] += amount;
+    }
+}
