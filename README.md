@@ -14,3 +14,6 @@ Implemented proper totalSupply updates on mint and burn. Brings the token closer
 feat: implement approve and transferFrom in MyToken
 
 Completed the core ERC20 interface by adding approve and transferFrom functions. Token is now more usable on Base.
+feat: add allowance checking helpers to MyToken
+
+Created view functions to easily check remaining allowances. Useful for frontends and testing on Base.
