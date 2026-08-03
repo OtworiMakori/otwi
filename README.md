@@ -17,3 +17,6 @@ Completed the core ERC20 interface by adding approve and transferFrom functions.
 feat: add allowance checking helpers to MyToken
 
 Created view functions to easily check remaining allowances. Useful for frontends and testing on Base.
+feat: add blacklist functionality to MyToken
+
+Implemented a simple blacklist so the owner can restrict certain addresses. Extra security feature for tokens on Base.
