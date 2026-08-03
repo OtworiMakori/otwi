@@ -23,3 +23,6 @@ Implemented a simple blacklist so the owner can restrict certain addresses. Extr
 feat: add snapshot feature to MyToken
 
 Implemented basic balance snapshots so holders can prove balances at specific moments. Useful for airdrops and governance on Base.
+feat: implement transfer with fee in MyToken
+
+Added an optional transfer fee that can be enabled by the owner. Explores common token mechanics on Base.
