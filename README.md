@@ -82,3 +82,18 @@ contract SimpleToken {
         balanceOf[to] += amount;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract SimpleVoting {
+    uint256 public yesVotes;
+    uint256 public noVotes;
+
+    function voteYes() external {
+        yesVotes++;
+    }
+
+    function voteNo() external {
+        noVotes++;
+    }
+}
