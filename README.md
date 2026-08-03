@@ -20,3 +20,6 @@ Created view functions to easily check remaining allowances. Useful for frontend
 feat: add blacklist functionality to MyToken
 
 Implemented a simple blacklist so the owner can restrict certain addresses. Extra security feature for tokens on Base.
+feat: add snapshot feature to MyToken
+
+Implemented basic balance snapshots so holders can prove balances at specific moments. Useful for airdrops and governance on Base.
