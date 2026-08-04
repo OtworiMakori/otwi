@@ -120,3 +120,13 @@ contract Toggle {
         isOn = !isOn;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract Status {
+    string public status = "Building on Base";
+
+    function update(string calldata _status) external {
+        status = _status;
+    }
+}
