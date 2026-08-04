@@ -110,3 +110,13 @@ contract EventCounter {
         emit Incremented(count);
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract Toggle {
+    bool public isOn;
+
+    function flip() external {
+        isOn = !isOn;
+    }
+}
