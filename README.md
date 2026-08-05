@@ -140,3 +140,13 @@ contract Note {
         note = _note;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract AddressBook {
+    mapping(address => address) public contacts;
+
+    function setContact(address contact) external {
+        contacts[msg.sender] = contact;
+    }
+}
