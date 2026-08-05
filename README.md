@@ -208,3 +208,13 @@ contract ResetCounter {
         count = 0;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract NameStorage {
+    string public name;
+
+    function setName(string calldata _name) external {
+        name = _name;
+    }
+}
