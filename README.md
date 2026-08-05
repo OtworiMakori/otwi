@@ -178,3 +178,19 @@ contract EvenOdd {
         return number % 2 == 0;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract OwnerSetter {
+    address public owner;
+    uint256 public value;
+
+    constructor() {
+        owner = msg.sender;
+    }
+
+    function set(uint256 _value) external {
+        require(msg.sender == owner, "Not owner");
+        value = _value;
+    }
+}
