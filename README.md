@@ -150,3 +150,13 @@ contract AddressBook {
         contacts[msg.sender] = contact;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract Points {
+    mapping(address => uint256) public points;
+
+    function addPoint() external {
+        points[msg.sender]++;
+    }
+}
