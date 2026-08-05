@@ -194,3 +194,17 @@ contract OwnerSetter {
         value = _value;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract ResetCounter {
+    uint256 public count;
+
+    function inc() external {
+        count++;
+    }
+
+    function reset() external {
+        count = 0;
+    }
+}
