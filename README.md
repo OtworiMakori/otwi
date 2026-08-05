@@ -130,3 +130,13 @@ contract Status {
         status = _status;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract Note {
+    string public note;
+
+    function write(string calldata _note) external {
+        note = _note;
+    }
+}
