@@ -260,3 +260,13 @@ contract ValueInitializer {
         initialized = true;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract GasPriceLogger {
+    uint256 public lastGasPrice;
+
+    function log() external {
+        lastGasPrice = tx.gasprice;
+    }
+}
