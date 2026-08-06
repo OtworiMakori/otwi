@@ -302,3 +302,14 @@ contract ValueDoubler {
         value = _value * 2;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract IncAndGet {
+    uint256 public count;
+
+    function inc() external returns (uint256) {
+        count++;
+        return count;
+    }
+}
