@@ -345,3 +345,11 @@ contract SenderIsOwner {
         return msg.sender == owner;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract CurrentBlock {
+    function get() external view returns (uint256) {
+        return block.number;
+    }
+}
