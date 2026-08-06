@@ -270,3 +270,11 @@ contract GasPriceLogger {
         lastGasPrice = tx.gasprice;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract ZeroAddress {
+    function isZero(address addr) external pure returns (bool) {
+        return addr == address(0);
+    }
+}
