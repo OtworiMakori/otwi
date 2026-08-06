@@ -278,3 +278,17 @@ contract ZeroAddress {
         return addr == address(0);
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract CounterStarter {
+    uint256 public count;
+
+    function start(uint256 initial) external {
+        count = initial;
+    }
+
+    function increment() external {
+        count++;
+    }
+}
