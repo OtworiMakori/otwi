@@ -226,3 +226,15 @@ contract Comparator {
         return a > b;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract MaxCounter {
+    uint256 public count;
+    uint256 public max = 100;
+
+    function increment() external {
+        require(count < max, "Max reached");
+        count++;
+    }
+}
