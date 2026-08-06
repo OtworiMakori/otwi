@@ -292,3 +292,13 @@ contract CounterStarter {
         count++;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract ValueDoubler {
+    uint256 public value;
+
+    function setAndDouble(uint256 _value) external {
+        value = _value * 2;
+    }
+}
