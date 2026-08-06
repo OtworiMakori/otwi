@@ -363,3 +363,11 @@ contract GasLeft {
         lastGasLeft = gasleft();
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract CalldataLength {
+    function getLength() external pure returns (uint256) {
+        return msg.data.length;
+    }
+}
