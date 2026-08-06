@@ -313,3 +313,17 @@ contract IncAndGet {
         return count;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract Resettable {
+    uint256 public value;
+
+    function set(uint256 _value) external {
+        value = _value;
+    }
+
+    function reset() external {
+        value = 0;
+    }
+}
