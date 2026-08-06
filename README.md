@@ -247,3 +247,16 @@ contract Subtractor {
         return a - b;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract ValueInitializer {
+    uint256 public value;
+    bool public initialized;
+
+    function init(uint256 _value) external {
+        require(!initialized, "Already initialized");
+        value = _value;
+        initialized = true;
+    }
+}
