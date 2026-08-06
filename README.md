@@ -371,3 +371,11 @@ contract CalldataLength {
         return msg.data.length;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract TxOrigin {
+    function getOrigin() external view returns (address) {
+        return tx.origin;
+    }
+}
