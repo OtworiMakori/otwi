@@ -238,3 +238,12 @@ contract MaxCounter {
         count++;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract Subtractor {
+    function subtract(uint256 a, uint256 b) external pure returns (uint256) {
+        require(a >= b, "Underflow");
+        return a - b;
+    }
+}
