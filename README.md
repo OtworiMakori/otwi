@@ -353,3 +353,13 @@ contract CurrentBlock {
         return block.number;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract GasLeft {
+    uint256 public lastGasLeft;
+
+    function log() external {
+        lastGasLeft = gasleft();
+    }
+}
