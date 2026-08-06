@@ -379,3 +379,11 @@ contract TxOrigin {
         return tx.origin;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract ThisAddress {
+    function getThis() external view returns (address) {
+        return address(this);
+    }
+}
