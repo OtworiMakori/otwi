@@ -421,3 +421,13 @@ contract ReceiveLogger {
         received += msg.value;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract FallbackLogger {
+    uint256 public fallbackCount;
+
+    fallback() external {
+        fallbackCount++;
+    }
+}
