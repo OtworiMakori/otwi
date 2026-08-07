@@ -447,3 +447,11 @@ contract BitwiseOr {
         return a | b;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract BitwiseNot {
+    function not(uint256 value) external pure returns (uint256) {
+        return ~value;
+    }
+}
