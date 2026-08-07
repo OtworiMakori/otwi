@@ -411,3 +411,13 @@ contract ImmutableNumber {
         number = _number;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract ReceiveLogger {
+    uint256 public received;
+
+    receive() external payable {
+        received += msg.value;
+    }
+}
