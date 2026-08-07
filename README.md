@@ -401,3 +401,13 @@ pragma solidity ^0.8.20;
 contract BaseSepolia {
     uint256 public constant CHAIN_ID = 84532;
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract ImmutableNumber {
+    uint256 public immutable number;
+
+    constructor(uint256 _number) {
+        number = _number;
+    }
+}
