@@ -387,3 +387,11 @@ contract ThisAddress {
         return address(this);
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract CodeSize {
+    function getSize(address addr) external view returns (uint256) {
+        return addr.code.length;
+    }
+}
