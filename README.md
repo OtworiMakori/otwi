@@ -471,3 +471,11 @@ contract Encode {
         return abi.encode(a, b);
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract AssertExample {
+    function check(uint256 value) external pure {
+        assert(value != 0);
+    }
+}
