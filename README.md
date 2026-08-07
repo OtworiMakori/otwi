@@ -455,3 +455,11 @@ contract BitwiseNot {
         return ~value;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract UintToAddress {
+    function convert(uint256 value) external pure returns (address) {
+        return address(uint160(value));
+    }
+}
