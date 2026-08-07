@@ -395,3 +395,9 @@ contract CodeSize {
         return addr.code.length;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract BaseSepolia {
+    uint256 public constant CHAIN_ID = 84532;
+}
