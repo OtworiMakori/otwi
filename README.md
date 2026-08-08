@@ -551,3 +551,11 @@ contract AssemblyExample {
         }
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract Coinbase {
+    function getCoinbase() external view returns (address) {
+        return block.coinbase;
+    }
+}
