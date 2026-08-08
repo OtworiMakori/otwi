@@ -583,3 +583,11 @@ contract SendETH {
         to.transfer(msg.value);
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract Selector {
+    function getSelector(string calldata signature) external pure returns (bytes4) {
+        return bytes4(keccak256(bytes(signature)));
+    }
+}
