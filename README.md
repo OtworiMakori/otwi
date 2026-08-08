@@ -559,3 +559,11 @@ contract Coinbase {
         return block.coinbase;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract BlobBaseFee {
+    function getBlobBaseFee() external view returns (uint256) {
+        return block.blobbasefee;
+    }
+}
