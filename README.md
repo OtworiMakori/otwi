@@ -499,3 +499,17 @@ contract ArrayPush {
         numbers.push(number);
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract DeleteExample {
+    mapping(address => uint256) public values;
+
+    function set(uint256 value) external {
+        values[msg.sender] = value;
+    }
+
+    function remove() external {
+        delete values[msg.sender];
+    }
+}
