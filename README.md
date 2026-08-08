@@ -591,3 +591,11 @@ contract Selector {
         return bytes4(keccak256(bytes(signature)));
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract ArrayLength {
+    function getLength(uint256[] calldata arr) external pure returns (uint256) {
+        return arr.length;
+    }
+}
