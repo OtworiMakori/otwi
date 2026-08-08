@@ -599,3 +599,18 @@ contract ArrayLength {
         return arr.length;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract StructArray {
+    struct Item {
+        uint256 id;
+        string name;
+    }
+
+    Item[] public items;
+
+    function add(uint256 id, string calldata name) external {
+        items.push(Item(id, name));
+    }
+}
