@@ -489,3 +489,13 @@ contract ConstructorExample {
         value = _value;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract ArrayPush {
+    uint256[] public numbers;
+
+    function push(uint256 number) external {
+        numbers.push(number);
+    }
+}
