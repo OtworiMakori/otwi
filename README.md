@@ -513,3 +513,15 @@ contract DeleteExample {
         delete values[msg.sender];
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+interface IExample {
+    function getValue() external view returns (uint256);
+}
+
+contract Example is IExample {
+    function getValue() external pure returns (uint256) {
+        return 42;
+    }
+}
