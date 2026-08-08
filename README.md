@@ -541,3 +541,13 @@ pragma solidity ^0.8.20;
 contract ConstantString {
     string public constant GREETING = "Hello Base";
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract AssemblyExample {
+    function getChainId() external view returns (uint256 id) {
+        assembly {
+            id := chainid()
+        }
+    }
+}
