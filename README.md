@@ -567,3 +567,11 @@ contract BlobBaseFee {
         return block.blobbasefee;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract MsgSig {
+    function getSig() external pure returns (bytes4) {
+        return msg.sig;
+    }
+}
