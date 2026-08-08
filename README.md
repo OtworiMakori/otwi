@@ -525,3 +525,13 @@ contract Example is IExample {
         return 42;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract IndexedEvent {
+    event ValueSet(address indexed user, uint256 value);
+
+    function set(uint256 value) external {
+        emit ValueSet(msg.sender, value);
+    }
+}
