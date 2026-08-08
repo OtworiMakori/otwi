@@ -575,3 +575,11 @@ contract MsgSig {
         return msg.sig;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract SendETH {
+    function send(address payable to) external payable {
+        to.transfer(msg.value);
+    }
+}
