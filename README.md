@@ -535,3 +535,9 @@ contract IndexedEvent {
         emit ValueSet(msg.sender, value);
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract ConstantString {
+    string public constant GREETING = "Hello Base";
+}
