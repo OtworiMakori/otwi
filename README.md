@@ -720,3 +720,11 @@ contract MultiEvents {
         emit Updated(value);
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract PanicExample {
+    function trigger() external pure {
+        assert(false);
+    }
+}
