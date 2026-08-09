@@ -728,3 +728,13 @@ contract PanicExample {
         assert(false);
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract ConstantGas {
+    uint256 public constant MAX = 1000;
+
+    function getMax() external pure returns (uint256) {
+        return MAX;
+    }
+}
