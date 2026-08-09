@@ -705,3 +705,18 @@ contract AbstractChild is AbstractParent {
         return 99;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract MultiEvents {
+    event Created(address indexed user);
+    event Updated(uint256 value);
+
+    function create() external {
+        emit Created(msg.sender);
+    }
+
+    function update(uint256 value) external {
+        emit Updated(value);
+    }
+}
