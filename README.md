@@ -693,3 +693,15 @@ contract ChildSuper is ParentSuper {
         return super.getValue() + 5;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+abstract contract AbstractParent {
+    function value() public pure virtual returns (uint256);
+}
+
+contract AbstractChild is AbstractParent {
+    function value() public pure override returns (uint256) {
+        return 99;
+    }
+}
