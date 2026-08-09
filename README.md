@@ -651,3 +651,12 @@ contract ShortCircuit {
         return a > 0 && b > 0;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract Visibility {
+    function publicFunc() public pure returns (uint256) { return 1; }
+    function externalFunc() external pure returns (uint256) { return 2; }
+    function internalFunc() internal pure returns (uint256) { return 3; }
+    function privateFunc() private pure returns (uint256) { return 4; }
+}
