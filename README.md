@@ -643,3 +643,11 @@ contract BreakExample {
         return target;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract ShortCircuit {
+    function check(uint256 a, uint256 b) external pure returns (bool) {
+        return a > 0 && b > 0;
+    }
+}
