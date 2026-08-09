@@ -749,3 +749,13 @@ contract MemoryAlloc {
         }
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract BalanceAssembly {
+    function getBalance(address addr) external view returns (uint256 bal) {
+        assembly {
+            bal := balance(addr)
+        }
+    }
+}
