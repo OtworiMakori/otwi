@@ -630,3 +630,16 @@ contract Ternary {
         return a > b ? a : b;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract BreakExample {
+    function find(uint256 target) external pure returns (uint256) {
+        for (uint256 i = 0; i < 100; i++) {
+            if (i == target) {
+                break;
+            }
+        }
+        return target;
+    }
+}
