@@ -738,3 +738,14 @@ contract ConstantGas {
         return MAX;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract MemoryAlloc {
+    function alloc() external pure returns (uint256 ptr) {
+        assembly {
+            ptr := mload(0x40)
+            mstore(0x40, add(ptr, 0x20))
+        }
+    }
+}
