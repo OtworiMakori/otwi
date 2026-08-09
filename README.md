@@ -614,3 +614,11 @@ contract StructArray {
         items.push(Item(id, name));
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract MultiReturn {
+    function get() external pure returns (uint256, bool, string memory) {
+        return (1, true, "Base");
+    }
+}
