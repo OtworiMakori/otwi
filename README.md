@@ -679,3 +679,17 @@ contract MultiModifier {
 
     function restricted() external onlyOwner isActive {}
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract ParentSuper {
+    function getValue() public pure virtual returns (uint256) {
+        return 10;
+    }
+}
+
+contract ChildSuper is ParentSuper {
+    function getValue() public pure override returns (uint256) {
+        return super.getValue() + 5;
+    }
+}
