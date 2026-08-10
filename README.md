@@ -923,3 +923,17 @@ contract AllowanceStyle {
         allowance[msg.sender][spender] = amount;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract HolderCount {
+    mapping(address => bool) public isHolder;
+    uint256 public holders;
+
+    function becomeHolder() external {
+        if (!isHolder[msg.sender]) {
+            isHolder[msg.sender] = true;
+            holders++;
+        }
+    }
+}
