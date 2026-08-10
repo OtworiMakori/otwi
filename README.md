@@ -913,3 +913,13 @@ contract ProposalCounter {
         return proposalCount;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract AllowanceStyle {
+    mapping(address => mapping(address => uint256)) public allowance;
+
+    function approve(address spender, uint256 amount) external {
+        allowance[msg.sender][spender] = amount;
+    }
+}
