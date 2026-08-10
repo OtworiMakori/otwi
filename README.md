@@ -902,3 +902,14 @@ contract DepositWithdraw {
         payable(msg.sender).transfer(amount);
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract ProposalCounter {
+    uint256 public proposalCount;
+
+    function createProposal() external returns (uint256) {
+        proposalCount++;
+        return proposalCount;
+    }
+}
