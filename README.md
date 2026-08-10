@@ -786,3 +786,13 @@ contract AddressToString {
         return string(result);
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract ArraySum {
+    function sum(uint256[] calldata arr) external pure returns (uint256 total) {
+        for (uint256 i = 0; i < arr.length; i++) {
+            total += arr[i];
+        }
+    }
+}
