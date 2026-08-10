@@ -831,3 +831,17 @@ contract StructArrayPush {
         points.push(Point(x, y));
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract StringSlice {
+    function firstChars(string calldata text, uint256 n) external pure returns (string memory) {
+        bytes memory str = bytes(text);
+        require(n <= str.length, "Too long");
+        bytes memory result = new bytes(n);
+        for (uint256 i = 0; i < n; i++) {
+            result[i] = str[i];
+        }
+        return string(result);
+    }
+}
