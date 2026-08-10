@@ -759,3 +759,13 @@ contract BalanceAssembly {
         }
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract GasleftAssembly {
+    function getGasLeft() external view returns (uint256 g) {
+        assembly {
+            g := gas()
+        }
+    }
+}
