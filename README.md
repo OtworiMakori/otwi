@@ -796,3 +796,23 @@ contract ArraySum {
         }
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract ArrayFilter {
+    function filterEven(uint256[] calldata arr) external pure returns (uint256[] memory) {
+        uint256 count = 0;
+        for (uint256 i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 == 0) count++;
+        }
+        uint256[] memory result = new uint256[](count);
+        uint256 j = 0;
+        for (uint256 i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 == 0) {
+                result[j] = arr[i];
+                j++;
+            }
+        }
+        return result;
+    }
+}
