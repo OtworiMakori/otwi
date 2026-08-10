@@ -816,3 +816,18 @@ contract ArrayFilter {
         return result;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract StructArrayPush {
+    struct Point {
+        uint256 x;
+        uint256 y;
+    }
+
+    Point[] public points;
+
+    function add(uint256 x, uint256 y) external {
+        points.push(Point(x, y));
+    }
+}
