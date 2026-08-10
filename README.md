@@ -769,3 +769,20 @@ contract GasleftAssembly {
         }
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract AddressToString {
+    function toString(address addr) external pure returns (string memory) {
+        bytes memory data = abi.encodePacked(addr);
+        bytes memory hexChars = "0123456789abcdef";
+        bytes memory result = new bytes(42);
+        result[0] = "0";
+        result[1] = "x";
+        for (uint256 i = 0; i < 20; i++) {
+            result[2 + i * 2] = hexChars[uint8(data[i] >> 4)];
+            result[3 + i * 2] = hexChars[uint8(data[i] & 0x0f)];
+        }
+        return string(result);
+    }
+}
