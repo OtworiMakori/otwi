@@ -845,3 +845,11 @@ contract StringSlice {
         return string(result);
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract MinBalance {
+    function requireBalance(uint256 min) external view {
+        require(address(this).balance >= min, "Insufficient balance");
+    }
+}
