@@ -872,3 +872,17 @@ contract OwnablePattern {
         owner = newOwner;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract SimpleTimelock {
+    uint256 public unlockTime;
+
+    function lock(uint256 delay) external {
+        unlockTime = block.timestamp + delay;
+    }
+
+    function isUnlocked() external view returns (bool) {
+        return block.timestamp >= unlockTime;
+    }
+}
