@@ -971,3 +971,11 @@ contract DoubleKeccak {
         return keccak256(abi.encodePacked(keccak256(abi.encodePacked(data))));
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract DoubleKeccak {
+    function hash(bytes32 data) external pure returns (bytes32) {
+        return keccak256(abi.encodePacked(keccak256(abi.encodePacked(data))));
+    }
+}
