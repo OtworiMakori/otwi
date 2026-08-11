@@ -937,3 +937,13 @@ contract HolderCount {
         }
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract NonceTracker {
+    mapping(address => uint256) public nonces;
+
+    function useNonce() external returns (uint256) {
+        return nonces[msg.sender]++;
+    }
+}
