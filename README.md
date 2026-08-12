@@ -987,3 +987,13 @@ contract BlockWeightedHash {
         return keccak256(abi.encodePacked(block.number, data));
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract LotteryTicket {
+    mapping(address => uint256) public ticket;
+
+    function buy(uint256 number) external {
+        ticket[msg.sender] = number;
+    }
+}
