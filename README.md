@@ -997,3 +997,17 @@ contract LotteryTicket {
         ticket[msg.sender] = number;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract AuctionEnd {
+    uint256 public endTime;
+
+    function start(uint256 duration) external {
+        endTime = block.timestamp + duration;
+    }
+
+    function hasEnded() external view returns (bool) {
+        return block.timestamp >= endTime;
+    }
+}
